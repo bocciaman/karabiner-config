@@ -396,7 +396,7 @@
                                 ],
                                 "description": "Open -a 'Skype.app'",
                                 "from": {
-                                    "key_code": "p",
+                                    "key_code": "c",
                                     "modifiers": {
                                         "mandatory": [
                                             "any"
@@ -536,6 +536,30 @@
                                 "to": [
                                     {
                                         "shell_command": "sh /Users/aanwar1982/Documents/bash_scripts/hugo_img.sh"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_h",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Karabiner config with Hyper Key + h + k",
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "sh /Users/aanwar1982/Documents/bash_scripts/karabinercode.sh"
                                     }
                                 ],
                                 "type": "basic"
