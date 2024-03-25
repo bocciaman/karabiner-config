@@ -1,0 +1,240 @@
+{
+    "description": "New Rule (change left_shift+caps_lock to page_down, right_shift+caps_lock to left_command+mission_control)",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "caps_lock",
+                "modifiers": {
+                    "mandatory": [
+                        "left_shift"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "page_down",
+                    "modifiers": []
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "caps_lock",
+                "modifiers": {
+                    "mandatory": [
+                        "right_shift"
+                    ],
+                    "optional": [
+                        "any"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "apple_vendor_keyboard_key_code": "mission_control",
+                    "modifiers": [
+                        "left_command"
+                    ]
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "o",
+                "modifiers": {
+                    "mandatory": ["command", "control", "option", "shift"]
+                }
+            },
+            "to": [
+                {
+                    "set_variable": {
+                        "name": "hyper_o_layer",
+                        "value": 1
+                    }
+                }
+            ],
+            "to_after_key_up": [
+                {
+                    "set_variable": {
+                        "name": "hyper_o_layer",
+                        "value": 0
+                    }
+                }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "hyper_o_layer",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "s",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "shell_command": "open -a 'Safari'"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "hyper_o_layer",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "l",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "shell_command": "open -a 'Slack'"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "hyper_o_layer",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "w",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "shell_command": "open -a 'WhatsApp'"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "hyper_o_layer",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "d",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "shell_command": "open -a 'Drafts'"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "hyper_o_layer",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "t",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "shell_command": "open -a 'iTerm'"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "hyper_o_layer",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "f",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "shell_command": "open -a 'Fantastical'"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "hyper_o_layer",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "k",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "shell_command": "open -a 'Skype'"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "hyper_o_layer",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "g",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "shell_command": "open -a 'Gmail.app'"
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
